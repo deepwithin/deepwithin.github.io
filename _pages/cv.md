@@ -1,6 +1,6 @@
 ---
 layout: cv
-permalink: /cv/
+permalink: /assets/pdf/deep_patel_cv.pdf #/cv/
 title: CV
 nav: true
 nav_order: 4
