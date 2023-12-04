@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p><a href='vimaan.ai'>vimaan.ai</a></p>
+    <p>vimaan.ai</p>
     <p>Koramangala</p>
     <p>Bengaluru, India</p>
 
