@@ -16,6 +16,7 @@ Xbox 360 Kinect sensor is used. Its range is about 5 metres which is more than I
 
 # Project workflow
 Firstly, RANSAC segmentation was tried on one single frame of depth image. Once that was successful, code was converted to include ros subscriber and publisher for the incoming point cloud and the processed output point cloud. This was done using an artificial pcd publisher to publish the single pcd file. Command for the same is given below:
+
     rosrun pcl_ros pcd_to_pointcloud extracted_inliers.pcd 0.1 _frame_id:=map cloud_pcd:=orig_cloud_pcd
 
 After this was working we moved to live data steam. On live data stream we then cropped the point cloud to hard coded bounding box frame which required extracting x,y,z data from point cloud, converting it to numpy array for slicing based on indices and the reconstructing point cloud for publishing over standard message types. After this a subscriber was created to listen to bounding box coordinates and used it to replace the hard coded bounding box indices for cropping the point cloud. After this last task of marker placement. For marker all the plane data was collected into a Float32MultiArray and published. Another node will be listening to this data and place a cuboidal marker based on this data.
