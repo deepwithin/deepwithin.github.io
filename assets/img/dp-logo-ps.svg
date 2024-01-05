@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="210" height="210" viewBox="0 0 250 250">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        font-size: 220.01px;
+      }
+
+      .cls-2 {
+        fill: #00a2e8;
+        font-family: "Bauhaus 93";
+      }
+    </style>
+  </defs>
+  <text x="-3" y="183" class="cls-1"><tspan class="cls-2">dp</tspan></text>
+</svg>
