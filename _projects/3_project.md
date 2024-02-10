@@ -1,81 +1,66 @@
 ---
 layout: page
-title: project 3
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
+title: Smart Traffic Monitoring System
+description: smart control of traffic lights based on traffic detection using CV
+img: assets/img/iot-desc.jpg
 importance: 3
-category: work
+category: Academic projects
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## Project Description
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Integrating computer vision-based object detection and segmentation to gauge vehicle density on a road crossing for smart traffic light control with priority actuation based on classification of the traffic and simultaneous live data update on cloud for further analysis and visualization.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/iot-desc.jpg" title="iot description" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+    Project description image as a collage of different project snapshots
 </div>
+
+## Build Flow
+
+1. Assigned labels to images for training.
+2. Building Tensorflow from source
+3. Training the custom object detection model on Tensorflow to detect green ball as ordinary
+vehicle and red ball as emergency vehicle.
+4. Converting the frozen label-map to .tflite model for running on RPi
+5. Creating Frontend for data display using Flask. Bokeh with google maps API used for traffic
+statistics visualization.
+6. Integrating LED actuation with object detection script and testing it on a physical model made
+using balls and cardboard streets.
+7. Saving the detected objects in a csv file using pandas
+8. Uploading the data to google spreadsheets using webhooks API
+9. Hosting the Flask webpage on Azure VM
+
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/iot-arch.jpg" title="iot architecture" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal its glory in the next row of images.
-
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    IOT project architecture
 </div>
 
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+## Smart traffic management system architecture and working
 
-{% raw %}
-```html
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-```
-{% endraw %}
+- Camera feeds data to RPi via one of its physical ports
+- RPi uses pre-trained TFlite model and its corresponding framework to detect the objects and create .CSV file
+- RPi controls the traffic light based on the traffic density. High traffic lanes are prioritized if the opposite lane is empty.
+- In case of an emergency vehicle, the corresponding lane is given higher priority.
+- RPi authenticates Azure VM for sending the CSV file and Video stream.
+- Azure VM stores the incoming data to its system.
+- Azure VM hosts flask based web page which displays the latest traffic information in a table
+- Google maps API is used to visualize the traffic statistics.
+- User requests the web page using the URL.
+- Web page is displayed over a secure protocol.
+
+
+## Practical use case
+
+Often due to rigid traffic light switching time at an intersection a busy lane might have to get clogged with traffic while the other lane is free. With smart detection of density on any lane, light duration can be varied dynamically according to the traffic behaviour. This design also enables the prioritisation of a particular lane if any emergency vehicle is approaching so as to avoid jams in that particular lane.
