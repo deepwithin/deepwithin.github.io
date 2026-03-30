@@ -4,7 +4,7 @@ title: Semantic mapping in indoor SLAM
 description: to build a blind guiding robot
 img: assets/img/seg_video_2.gif
 importance: 1
-category: Academic projects
+category: Perception, Localization, Robotics
 related_publications: 
 ---
 

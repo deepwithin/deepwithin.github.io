@@ -5,7 +5,7 @@ permalink: /projects/
 description: A growing collection of my cool projects.
 nav: true
 nav_order: 2
-display_categories: [Academic projects, work, fun]
+display_categories: ["Perception, Localization, Robotics", "Machine Learning"]
 horizontal: false
 ---
 

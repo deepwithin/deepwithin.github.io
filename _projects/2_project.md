@@ -4,7 +4,7 @@ title: Quadruped robot
 description: build and simulate a walking four-legged robot
 img: assets/img/sim-test1.gif
 importance: 2
-category: Academic projects
+category: Perception, Localization, Robotics
 giscus_comments: false
 ---
 

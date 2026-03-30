@@ -4,7 +4,7 @@ title: Smart Traffic Monitoring System
 description: smart control of traffic lights based on traffic detection using CV
 img: assets/img/iot-desc.jpg
 importance: 3
-category: Academic projects
+category: Machine Learning
 ---
 
 ## Project Description
