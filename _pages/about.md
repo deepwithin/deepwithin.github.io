@@ -9,7 +9,6 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>La Jolla</p>
     <p>San Diego</p>
     <p>CA, United States</p>
 
@@ -23,6 +22,6 @@ Hi, I'm a Robotics Software Engineer with three years of industry experience, cu
 
 I approach software engineering with an entrepreneurial mindset. During my time at [vimaan.ai](http://vimaan.ai/), I didn't just write code to spec; I took ownership of the entire product experience. After identifying the root causes of frequent production bottlenecks and user pain points in our inventory scanning system, I spearheaded a complete architectural redesign. By focusing on both backend efficiency and frontend UX, the resulting pilot completely eliminated the need for our user training manual while drastically improving the system's overall reliability.
 
-I am a highly adaptable builder who is comfortable wearing multiple hats. My technical foundation relies heavily on C++, Python, and ROS, and my work spans the entire stack—from processing complex sensor data at the edge, to building backend microservices, to collaborating cross-functionally on intuitive user interfaces. If there is a complex problem to solve, I ask the right questions, define the architecture, and deliver software that makes a real impact.
+I am a highly adaptable builder who is comfortable wearing multiple hats. My technical foundation relies heavily on C++, Python, and ROS, and my work spans the entire stack - from processing complex sensor data at the edge, to building backend microservices, to collaborating cross-functionally on intuitive user interfaces. If there is a complex problem to solve, I ask the right questions, define the architecture, and deliver software that makes a real impact.
 
 Welcome to my portfolio! Do you want to checkout the projects I have worked on? [My Projects](https://deepwithin.github.io/projects/)
